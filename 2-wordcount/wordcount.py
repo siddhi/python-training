@@ -1,5 +1,5 @@
 excerpt = """
-The Babel fish, said The Hitchhiker’s Guide to the Galaxy quietly,
+The Babel fish, said The Hitchhikers Guide to the Galaxy quietly,
 is small, yellow, and leech-like, and probably the oddest thing in
 the Universe. It feeds on brainwave energy received not from its own
 carrier but from those around it. It absorbs all unconscious mental
@@ -13,5 +13,16 @@ language. The speech patterns you actually hear decode the brainwave
 matrix which has been fed into your mind by your Babel fish.
 """
 
-# Write a python program to print the three most common words from the
-# text above
+def word_count(word_count_pair):
+    return word_count_pair[1]
+
+frequency = {}
+for word in excerpt.split():
+    try:
+        frequency[word] += 1
+    except KeyError:
+        frequency[word] = 1
+
+items = list(frequency.items())
+items.sort(key=word_count, reverse=True)
+print(items[:3])
