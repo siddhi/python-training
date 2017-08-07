@@ -35,7 +35,7 @@ class CellTest(unittest.TestCase):
                     6, 6, 6, 7, 7, 7, 8, 8, 8,
                     6, 6, 6, 7, 7, 7, 8, 8, 8,
                     6, 6, 6, 7, 7, 7, 8, 8, 8]
-        positions = [(row, col) for col in range(9) for row in range(9)]
+        positions = [(row, col) for row in range(9) for col in range(9)]
         for value, position in zip(expected, positions):
             cell = Cell(position)
             self.assertEqual(value, cell.block())
@@ -69,16 +69,7 @@ class BoardTest(unittest.TestCase):
     medium_puzzle_answer = """654927813789613542312845967137594286295186734846372159968231475571469328423758691"""
     hard_puzzle = """3.48.......5.2...8..7..6.....12..9..9.3...4.1..61938.....4..2..5...123....2..87.6"""
     almost_solved_puzzle = """1425763897963842515389126749742351682516987438637419254271538963894675126158.9437"""
-    solved_puzzle = """
-    142576389
-    796384251
-    538912674
-    974235168
-    251698743
-    863741925
-    427153896
-    389467512
-    615829437""".replace("\n", "").replace(" ", "")
+    solved_puzzle = """142576389796384251538912674974235168251698743863741925427153896389467512615829437"""
 
     def test_a_new_board_is_not_complete(self):
         board = Board()

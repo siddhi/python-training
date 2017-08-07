@@ -20,7 +20,7 @@ class Cell:
 
     def block(self):
         row, col = self.position
-        return (col // 3) * 3 + row // 3
+        return (row // 3) * 3 + col // 3
 
     def is_same_row(self, cell):
         return self.position[0] == cell.position[0]
