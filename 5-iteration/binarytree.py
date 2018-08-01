@@ -1,23 +1,45 @@
-def is_3xplus1(num):
-    return (num - 1) % 3 == 0
+class BinaryTreeNode:
+    def __init__(self, val):
+        self.left = None
+        self.right = None
+        self.val = val
 
+    def add(self, number):
+        if number > self.val:
+            if self.right:
+                self.right.add(number)
+            else:
+                self.right = BinaryTreeNode(number)
+        else:
+            if self.left:
+                self.left.add(number)
+            else:
+                self.left = BinaryTreeNode(number)
 
-def get_primes():
-    num = 2
-    prime_list = []
+    def inorder(self):
+        if self.left:
+            yield from self.left.inorder()
+        yield self.val
+        if self.right:
+            yield from self.right.inorder()
 
-    def is_prime(num):
-        for factor in prime_list:
-            if num % factor == 0:
-                return False
-        return True
+class SortedList:
+    def __init__(self, initial_values):
+        value_iterator = iter(initial_values)
+        self.tree = BinaryTreeNode(next(value_iterator))
+        for val in value_iterator:
+            self.tree.add(val)
 
-    while True:
-        if is_prime(num):
-            prime_list.append(num)
-            yield num
-        num = num + 1
+    def __add__(self, other):
+        new_list = SortedList(self)
+        for val in other:
+            new_list.tree.add(val)
+        return new_list
 
-other_primes = (prime for prime in get_primes() if is_3xplus1(prime))
-for prime, other_prime in zip(get_primes(), other_primes):
-    print(prime, other_prime)
+    def __iter__(self):
+        return self.tree.inorder()
+
+lst = SortedList([100, 10, -2, 4, 7])
+lst = lst + set([7, 11, 92, 5])
+for item in lst:
+    print(item)
