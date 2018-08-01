@@ -1,5 +1,5 @@
 excerpt = """
-The Babel fish, said The Hitchhiker’s Guide to the Galaxy quietly,
+The Babel fish, said The Hitchhikers Guide to the Galaxy quietly,
 is small, yellow, and leech-like, and probably the oddest thing in
 the Universe. It feeds on brainwave energy received not from its own
 carrier but from those around it. It absorbs all unconscious mental
