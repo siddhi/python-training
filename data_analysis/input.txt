@@ -1,0 +1,16 @@
+Sid Chennai 80
+Anjali Bangalore 5
+Sid Mumbai 90
+Anand Delhi 75
+Varsha Chennai 23
+Anjali Chennai 19
+Sid Delhi 5
+Sid Bangalore 60
+Varsha Mumbai 100
+Anjali Delhi 45
+Anjali Mumbai 80
+Anand Chennai 60
+Anand Mumbai 50
+Anand Bangalore 80
+Varsha Delhi 30
+Varsha Bangalore 50
